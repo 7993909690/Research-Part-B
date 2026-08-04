@@ -1,0 +1,1922 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  12pt,
+  a4paper,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[top=20mm, left=20mm, right=20mm, bottom=20mm]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\usepackage{pdflscape}
+\usepackage{float}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Behavioural Cost and COVID-Safe Behaviour Adherence Over Time in Australia},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Behavioural Cost and COVID-Safe Behaviour Adherence Over Time in Australia}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Final Report}
+\author{Indrasena Reddy Muthyala\\
+\vspace{0.3cm}
+Project supervisor: Anthony Mays}
+\date{2026-08-04}
+
+\begin{document}
+\maketitle
+
+\section{Declaration}\label{declaration}
+
+In submitting this work I am indicating that I have read the
+University's Academic Integrity Policy. I declare that all material in
+this assessment is my own work except where there is clear
+acknowledgement and reference to the work of others. I give permission
+for this work to be reproduced and submitted to other academic staff for
+educational purposes.
+
+\section{Abstract}\label{abstract}
+
+This study analysed how adherence to 14 COVID-safe behaviours changed
+over time in Australia and whether behaviours involving greater
+practical and social burden were less stable. Data was obtained from
+the Australian component of the Imperial College London--YouGov COVID-19
+Behaviour Tracker, containing 53,833 responses across 54 survey waves.
+The behaviours were classified into low-cost, medium-cost, and high-cost groups.
+Weighted adherence percentages were calculated across nine six-wave
+blocks, and logistic regression models were fitted for five behaviours
+showing the largest increases between qweeks 31--36 and qweeks 37--42.
+
+Low-cost hygiene behaviours stayed high and stable,
+while medium- and high-cost behaviours showed greater variation over
+time. Mask wearing recorded the largest increase between the selected
+periods, followed by avoiding guests and avoiding small, medium-sized,
+and large gatherings. For all five modelled behaviours, including
+state-by-period interaction terms significantly improved model fit,
+showing that the size of the change in behaviour adherence differed across states and
+territories.
+
+The timing of these changes were consistent with the 2021 Delta outbreak
+and stronger public-health measures in several states. The
+findings show that adherence patterns varied with both behavioural
+burden and state-specific policies.
+
+\section{Introduction}\label{introduction}
+
+Public-health measures depend partially on whether people adapt and
+maintain the recommended protective behaviours (\citeproc{ref-ryan2025}{Ryan et al. 2025, 1--2}).
+During the COVID-19 pandemic, Australians were asked to perform
+behaviours ranging from routine hygiene practices to significant changes
+in movement and social contact. These behaviours differed in the effort,
+inconvenience, and disruption they caused, which may have influenced
+how consistently they were followed (\citeproc{ref-hinssen2023}{Hinssen and Dohle 2023, secs. 1.1--1.2}).
+
+Understanding these differences is important for future public-health
+planning. Australian research has shown that hygiene behaviours can
+remain relatively stable while behaviours involving physical
+distancing change more quickly over time (\citeproc{ref-ayre2021}{Ayre et al. 2021, 1}).
+Comparing multiple behaviours can therefore help identify which
+protective actions remain stable and which respond more strongly to
+changing outbreak and public-health conditions.
+
+In this report, low-cost behaviours refer to actions requiring
+little effort and disruption to daily life, while higher-cost behaviours
+require greater changes to movement, social contact, or normal daily
+activities.
+
+The following research question is addressed:
+
+\textbf{How did adherence to COVID-safe behaviours change over time in
+Australia, and were higher-cost behaviours less stable than lower-cost
+behaviours?}
+
+The project also explores whether the selected change between qweeks
+31--36 and qweeks 37--42 differed across Australian states and
+territories. This report compares 14 protective behaviours
+grouped by behavioural cost and to distinguish broad national
+patterns from state-specific differences.
+
+\section{Background}\label{background}
+
+\subsection{Protective behaviours and adherence}\label{protective-behaviours-and-adherence}
+
+Protective health behaviours reduce the risk of acquiring or
+transmitting infection. During COVID-19, these included personal hygiene
+behaviours such as washing hands with soap and water and covering the
+nose and mouth when coughing or sneezing, as well as mask wearing,
+avoiding close contact and gatherings, and limiting movement. Their
+value depends on both effectiveness and continued public adherence.
+
+Adherence can vary between behaviours and across time. Personal hygiene
+behaviours can generally be performed within an individual's normal
+routine, while behaviours such as avoiding gatherings or remaining at
+home require larger changes to social and daily activities. Previous
+research has reported associations between mask wearing, social
+distancing, and hand hygiene, indicating that protective behaviours may
+occur together (\citeproc{ref-ryan2025}{Ryan et al. 2025, 2}).
+
+Research has identified several influences on protective behaviour,
+including demographic characteristics, perceived illness threat, trust
+in government, social norms, and public-health policy (\citeproc{ref-ryan2025}{Ryan et al. 2025, 1--2}). The importance of these factors may also change during a
+pandemic. For example, before a mask mandate, mask wearing may primarily
+reflect voluntary choice and perceived infection risk; after a mandate,
+it may also reflect compliance with a legal requirement. Examining
+several protective behaviours over time can therefore show whether
+adherence follows a common pattern or changes according to the
+particular action being considered.
+
+\subsection{Behavioural cost and changes over time}\label{behavioural-cost-and-changes-over-time}
+
+Protective behaviours differ in the effort and disruption required to
+perform them. Some actions, such as washing hands or covering a cough,
+can be added to an existing routine with relatively little change. Other
+behaviours, such as avoiding gatherings, limiting travel, or remaining
+at home, can restrict social contact, employment, movement, and access
+to normal activities. These differences can be described as behavioural
+cost or burden.
+
+Protection Motivation Theory describes these barriers as \emph{response
+costs}. Response costs can include inconvenience, discomfort, financial
+expense, or disruption to everyday life. Higher expected response costs
+may make protective behaviours more difficult to perform even when an
+individual intends to follow the recommended action (\citeproc{ref-hinssen2023}{Hinssen and Dohle 2023, secs. 1.1--1.2}). In a longitudinal COVID-19 study, perceived costs were
+negatively associated with subsequently reported physical distancing and
+hand hygiene, although the corresponding direct effect was not
+significant for mask wearing (\citeproc{ref-hinssen2023}{Hinssen and Dohle 2023, sec. 4}).
+
+Behavioural burden may also help explain why protective behaviours
+follow different patterns over time. Australian research conducted
+during 2020 found that physical-distancing behaviours declined across
+successive surveys, while hygiene behaviours remained comparatively
+stable (\citeproc{ref-ayre2021}{Ayre et al. 2021, 1}). This distinction suggests that behaviours
+requiring continued changes to movement and social interaction may be
+less stable than behaviours that can become part of a daily routine.
+
+Behavioural cost was considered one of several influences on adherence.
+Perceived infection risk, confidence in performing the behaviour, social
+expectations, and public-health rules may increase adherence despite the
+burden involved. This report therefore examines both broad cost groups
+and individual behaviours.
+
+\subsection{Risk, policy, and the Australian context}\label{risk-policy-and-the-australian-context}
+
+Adherence to protective behaviour can change when people notice a
+greater risk of infection and when public-health rules become more
+restrictive. Risk perception, trust in authorities, social expectations,
+and government policy have all been identified as influences on COVID-19
+protective behaviour (\citeproc{ref-ryan2025}{Ryan et al. 2025, 1--2}). These factors may affect
+both whether a behaviour is adopted and whether it is maintained over
+time.
+
+Public-health rules can also change the practical meaning of a
+behaviour. For example, mask wearing may shift from a voluntary
+precaution to a legal requirement, while restrictions on gatherings,
+household visitors, or movement may directly limit opportunities for
+social contact. Changes in adherence may therefore reflect a combination
+of voluntary responses to perceived risk and compliance with formal
+rules.
+
+In Australia, COVID-19 outbreaks and public-health measures differed
+across states and territories. During the 2021 Delta period, New South
+Wales, Victoria, and the Australian Capital Territory strengthened
+stay-at-home orders, movement limits, mandatory mask requirements, and
+restrictions on gatherings. Western Australia provided a contrasting
+situation, returning towards pre-lockdown settings in July 2021 with
+mask and crowd restrictions removed (\citeproc{ref-abs_delta_2022}{Australian Bureau of Statistics 2022}, section ``Delta''; \citeproc{ref-nsw_health_2021}{NSW Health 2021, paras. 1--3}; \citeproc{ref-vic_premier_2021}{State Government of Victoria 2021, paras. 1--7}; \citeproc{ref-act_gov_2021}{Barr and Stephen-Smith 2021, paras. 1--6}; \citeproc{ref-abc_wa_2021}{Perpitch 2021, paras. 1--5}).
+
+Because these conditions varied between jurisdictions, a national
+adherence estimate may combine different state-level patterns. This
+provides the basis for examining both overall Australian trends and
+differences between states and territories. However, temporal alignment
+between policy changes and adherence cannot by itself establish that the
+policies caused the observed behaviour.
+
+\subsection{Logistic regression and model comparison}\label{logistic-regression-and-model-comparison}
+
+Logistic regression is used to model an outcome with two possible
+values, such as adherence (\texttt{1}) and non-adherence (\texttt{0}) (\citeproc{ref-hosmer2013}{Hosmer, Lemeshow, and Sturdivant 2013}).
+For respondent \(i\), let
+
+\[
+p_i = P(Y_i = 1 \mid \mathbf{x}_i)
+\]
+
+represent the probability of adherence given a set of explanatory
+variables \(\mathbf{x}_i\). Because a probability is restricted to values
+between 0 and 1, logistic regression models the log-odds of the outcome:
+
+\[
+\operatorname{logit}(p_i)
+=
+\log\left(\frac{p_i}{1-p_i}\right)
+=
+\beta_0
++
+\beta_1x_{i1}
++
+\cdots
++
+\beta_kx_{ik}.
+\]
+
+The quantity \(p_i/(1-p_i)\) is the odds of adherence. A regression
+coefficient \(\beta_j\) represents the change in log-odds associated with
+a one-unit change in \(x_j\), while the other variables in the model are
+held constant. Exponentiating the coefficient gives an odds ratio:
+
+\[
+OR_j = \exp(\beta_j).
+\]
+
+An odds ratio greater than 1 represents higher odds of adherence, an
+odds ratio below 1 represents lower odds, and an odds ratio equal to 1
+represents equal odds. A coefficient p-value tests the null hypothesis
+that \(\beta_j = 0\). A 95\% confidence interval describes the range of
+coefficient values that are reasonably compatible with the fitted model.
+Confidence intervals for odds ratios are obtained by exponentiating the
+corresponding coefficient confidence limits.
+
+An interaction term is used when the association between one explanatory
+variable and the outcome may differ according to another variable. For
+two variables \(X\) and \(Z\), a model containing an interaction can be
+written as
+
+\[
+\operatorname{logit}(p_i)
+=
+\beta_0
++
+\beta_1X_i
++
+\beta_2Z_i
++
+\beta_3(X_iZ_i).
+\]
+
+The coefficient \(\beta_3\) measures how the association between \(X\) and
+the outcome differs across values or categories of \(Z\). In this study,
+the interaction between survey period and state or territory was used to
+assess whether the period change in adherence differed across
+jurisdictions.
+
+Logistic-regression coefficients are commonly estimated by maximum
+likelihood (\citeproc{ref-hosmer2013}{Hosmer, Lemeshow, and Sturdivant 2013}). For independent binary observations, the
+likelihood is
+
+\[
+L(\boldsymbol{\beta})
+=
+\prod_{i=1}^{n}
+p_i^{y_i}
+(1-p_i)^{1-y_i},
+\]
+
+where \(y_i\) is the observed binary outcome. The corresponding
+log-likelihood is
+
+\[
+\ell(\boldsymbol{\beta})
+=
+\sum_{i=1}^{n}
+\left[
+y_i\log(p_i)
++
+(1-y_i)\log(1-p_i)
+\right].
+\]
+
+Maximum-likelihood estimation selects the coefficient values that
+maximise the log-likelihood. For models fitted to the same observations,
+a larger maximised log-likelihood indicates that the model assigns
+greater probability to the observed outcomes.
+
+A likelihood-ratio test compares two nested models, where the reduced
+model is contained within the larger or full model (\citeproc{ref-hosmer2013}{Hosmer, Lemeshow, and Sturdivant 2013}). The
+likelihood-ratio statistic is
+
+\[
+LR
+=
+2\left(
+\ell_{\text{full}}
+-
+\ell_{\text{reduced}}
+\right).
+\]
+
+Under the null hypothesis that the additional parameters do not improve
+the model, the statistic is approximately chi-squared distributed. The
+degrees of freedom equal the number of additional parameters in the full
+model. A small p-value provides evidence that including those additional
+parameters improves model fit.
+
+\section{Methods}\label{methods}
+
+\subsection{Overview of the analytical workflow}\label{overview-of-the-analytical-workflow}
+
+The analysis was carried out in a sequence of linked steps designed to
+answer the research question of how adherence to COVID-safe behaviours
+changed over time in Australia and whether higher-cost behaviours were
+less stable than lower-cost behaviours.
+
+First, the Australian Behaviour Tracker data were cleaned and checked to
+confirm the dataset structure and the availability of the variables
+required for the analysis. Second, 14 protective-behaviour items were
+selected and recoded into separate binary adherence outcomes. Third, the
+behaviours were classified into low-, medium-, and high-cost groups
+using a study-specific behavioural-burden framework.
+
+Fourth, weighted descriptive adherence estimates were calculated for
+individual behaviours and cost groups across nine six-wave blocks in
+order to identify broad temporal patterns. Fifth, the descriptive
+results were used to select qweeks 31--36 and qweeks 37--42 as the two
+adjacent periods showing the clearest simultaneous increase in medium-
+and high-cost adherence. Sixth, state-level descriptive comparisons were
+used to examine whether the change between these two periods was similar
+across jurisdictions.
+
+Finally, logistic regression models were fitted for the five behaviours
+showing the largest descriptive increases, and likelihood-ratio tests
+were used to assess whether allowing the period change to differ across
+states and territories improved model fit. Together, these steps
+combined descriptive and regression-based analyses to examine both
+overall adherence patterns and jurisdiction-specific differences.
+
+\begin{center}
+
+\textbf{Analytical workflow}
+
+\vspace{0.2cm}
+
+\fbox{
+\parbox{0.9\textwidth}{
+\centering
+Data cleaning and structure checks \\[0.2cm]
+$\downarrow$ \\[0.2cm]
+Selection of 14 behaviour variables and binary adherence coding \\[0.2cm]
+$\downarrow$ \\[0.2cm]
+Behavioural-cost grouping \\[0.2cm]
+$\downarrow$ \\[0.2cm]
+Weighted descriptive analysis across nine six-wave blocks \\[0.2cm]
+$\downarrow$ \\[0.2cm]
+Selection of qweeks 31--36 and qweeks 37--42 \\[0.2cm]
+$\downarrow$ \\[0.2cm]
+State-level descriptive comparison \\[0.2cm]
+$\downarrow$ \\[0.2cm]
+Logistic regression and likelihood-ratio model comparison
+}
+}
+
+\end{center}
+
+\subsection{Data source and study design}\label{data-source-and-study-design}
+
+This study used data from the Australian component of the Imperial
+College London--YouGov COVID-19 Behaviour Tracker. The Behaviour Tracker
+collected repeated cross-sectional survey data on protective behaviours,
+attitudes, demographics, health, and responses to COVID-19 across
+multiple countries between 2020 and 2022 (\citeproc{ref-jones2020}{Jones, Imperial College London Big Data Analytical Unit, and YouGov Plc 2020}; \citeproc{ref-ryan2025}{Ryan et al. 2025, 3}).
+
+The working dataset contained 53,833 survey responses collected across
+54 survey waves. Each row represented one survey response. All 53,833
+responses had a unique RecordNo, with no duplicate values found in the
+Australian dataset.
+
+The survey was conducted repeatedly over time; however, the dataset did
+not contain a stable person-level identifier that could be used to link
+the same respondent across survey waves. The data were analysed as
+repeated cross-sectional observations. Changes in adherence over time
+therefore represent differences between the surveyed samples across
+periods because individual respondents could not be followed across
+waves.
+
+Variables used in the final analysis included survey wave, survey end
+date, state or territory, survey weight, and 14 COVID-safe behaviour
+variables. Demographic variables were retained in the cleaned dataset
+but were not included in the final regression models.
+
+\subsection{Behaviour variables}\label{behaviour-variables}
+
+The analysis included 14 protective-behaviour items from the
+\texttt{i12\_health} series of the Behaviour Tracker questionnaire. Each item
+measured how frequently the respondent reported performing a particular
+protective behaviour. The original questionnaire wording and variable
+identifiers were retained where possible to make the selection of
+behaviours reproducible (\citeproc{ref-jones2020}{Jones, Imperial College London Big Data Analytical Unit, and YouGov Plc 2020}, codebook entries
+\texttt{i12\_health\_1}--\texttt{i12\_health\_8} and \texttt{i12\_health\_11}--\texttt{i12\_health\_16}; \citeproc{ref-ryan2025}{Ryan et al. 2025, 4}).
+
+The 14 protective-behaviour items were:
+
+\begin{itemize}
+\tightlist
+\item
+  wearing a mask outside the home (\texttt{i12\_health\_1});
+\item
+  washing hands (\texttt{i12\_health\_2});
+\item
+  using hand sanitiser (\texttt{i12\_health\_3});
+\item
+  covering coughs or sneezes (\texttt{i12\_health\_4});
+\item
+  avoiding potentially infected people (\texttt{i12\_health\_5});
+\item
+  avoiding going out (\texttt{i12\_health\_6});
+\item
+  avoiding healthcare settings (\texttt{i12\_health\_7});
+\item
+  avoiding public transport (\texttt{i12\_health\_8});
+\item
+  avoiding guests at home (\texttt{i12\_health\_11});
+\item
+  avoiding small gatherings (\texttt{i12\_health\_12});
+\item
+  avoiding medium-sized gatherings (\texttt{i12\_health\_13});
+\item
+  avoiding large gatherings (\texttt{i12\_health\_14});
+\item
+  avoiding crowded areas (\texttt{i12\_health\_15}); and
+\item
+  avoiding shops (\texttt{i12\_health\_16}).
+\end{itemize}
+
+Each item represented a distinct protective action, so a separate binary
+adherence outcome was created for each behaviour.
+
+\subsection{Binary adherence coding}\label{binary-adherence-coding}
+
+All 14 behaviours were measured using five ordered response categories:
+Always, Frequently, Sometimes, Rarely, and Not at all. In the original
+Behaviour Tracker coding, these responses corresponded to values from 5
+for Always to 1 for Not at all (\citeproc{ref-jones2020}{Jones, Imperial College London Big Data Analytical Unit, and YouGov Plc 2020}; \citeproc{ref-ryan2025}{Ryan et al. 2025, 4}).
+
+For this study, each item was dichotomised separately. Always (\texttt{5}) and
+Frequently (\texttt{4}) responses were classified as adherent (\texttt{1}). Sometimes
+(\texttt{3}), Rarely (\texttt{2}), and Not at all (\texttt{1}) responses were classified as
+not adherent (\texttt{0}).
+
+Missing responses were retained as missing and were not assigned to
+either adherence category. Consequently, the number of observations
+available for analysis could differ between behaviours.
+
+The same rule was applied separately to all 14 behaviour variables. All
+14 binary outcomes were used in the descriptive analysis. The five
+behaviours selected for the regression analysis were modelled separately
+as binary dependent variables. The data checks, variable-selection
+steps, and binary recoding procedure are documented in the Appendix
+section titled \emph{Data preparation and code references}.
+
+\subsection{Behavioural cost grouping}\label{behavioural-cost-grouping}
+
+The 14 behaviours were classified into low-, medium-, and high-cost
+groups using an exploratory behavioural-burden framework developed
+specifically for this study. The framework has not been externally
+validated. Behavioural cost was defined as the level of difficulty or
+disruption involved in maintaining a protective behaviour during normal
+daily life.
+
+The five scoring dimensions operationalised the response-cost concept
+discussed in the Background. Each behaviour was assessed according to
+practical effort, social disruption, lifestyle restriction, emotional
+burden, and financial burden. These dimensions represented the effort
+required and the extent to which a behaviour could affect social
+contact, daily activities, wellbeing, or finances.
+
+The dimension scores were assigned by the researcher using these
+definitions and the expected burden imposed by each behaviour. They were
+not taken from a previously validated behavioural-cost scale.
+
+Each dimension was assigned a score from 1 to 3, where 1 represented low
+burden, 2 represented moderate burden, and 3 represented high burden.
+The five scores were added to produce a total behavioural-cost score
+ranging from 5 to 15. Behaviours with total scores of 5--6 were
+classified as low cost, scores of 7--9 as medium cost, and scores of
+10--15 as high cost.
+
+Table \ref{tab:cost-groups} presents the final classification of the 14
+behaviours. The complete scoring matrix, including the five individual
+dimension scores and the total score for each behaviour, is provided in
+Appendix Table \ref{tab:cost-scoring}.
+
+\begin{longtable}[]{@{}ll@{}}
+\caption{\label{tab:cost-groups} Classification of the 14 protective behaviours by
+behavioural-cost group.}\tabularnewline
+\toprule\noalign{}
+Behaviour & Behavioural-cost group \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+Behaviour & Behavioural-cost group \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Covered coughs or sneezes & Low \\
+Washed hands & Low \\
+Used hand sanitiser & Low \\
+Wore a mask outside the home & Medium \\
+Avoided people with COVID-like symptoms & Medium \\
+Avoided crowded areas & Medium \\
+Avoided public transport & Medium \\
+Avoided having guests at home & Medium \\
+Avoided small gatherings & High \\
+Avoided medium gatherings & High \\
+Avoided large gatherings & High \\
+Avoided going out & High \\
+Avoided shops & High \\
+Avoided healthcare settings & High \\
+\end{longtable}
+
+The classification was based solely on the five burden dimensions and
+was completed independently of the observed adherence percentages. This
+preserved a separation between the classification criteria and the
+adherence patterns examined in the analysis.
+
+The scoring framework, behaviour-specific rationale, implementation
+details, and complete numerical scoring matrix are provided in Appendix
+Section \emph{Behavioural-cost scoring matrix}.
+
+\subsection{Survey timing and six-wave blocks}\label{survey-timing-and-six-wave-blocks}
+
+The Behaviour Tracker dataset identified each survey wave using the
+variable \texttt{qweek}. Each \texttt{qweek} value represents one survey wave. The
+intervals between survey waves were not fixed at one calendar week. The
+54 \texttt{qweek} values were converted into a numeric variable ranging from 1
+to 54 so that the survey waves could be placed in their correct
+chronological order.
+
+The survey end-date variable was used to map each \texttt{qweek} to the
+corresponding calendar period. This allowed the survey-based time
+periods to be compared with the timing of COVID-19 outbreaks and
+public-health measures in Australia. A complete mapping between the 54
+survey waves and their calendar dates is provided in Appendix Table
+\ref{tab:qweek-dates}.
+
+For the descriptive analysis, the 54 survey waves were divided into nine
+consecutive blocks containing six \texttt{qweek} values each: qweeks 1--6,
+7--12, 13--18, 19--24, 25--30, 31--36, 37--42, 43--48, and 49--54. These
+groups are referred to as six-wave blocks because each contains six
+survey waves and may cover a different calendar duration.
+
+The blocks reduced visual clutter while retaining equally sized groups
+of survey waves. They do not cover equal calendar durations because data
+collection did not occur at fixed weekly intervals.
+
+After reviewing the nine-block trends, qweeks 31--36 and 37--42 were
+selected because this adjacent pair showed the clearest simultaneous
+increase in medium- and high-cost adherence. The period selection was
+exploratory and was based on the observed descriptive pattern.
+
+Based on the survey end dates, qweeks 31--36 covered 5 May to 27 July
+2021, while qweeks 37--42 covered 28 July to 17 October 2021. These two
+periods were used in the behaviour-level comparisons, state-level
+comparisons, and logistic regression models. They are referred to
+throughout the report as the earlier period and the later period,
+respectively.
+
+The survey-wave mapping, code references, and saved numerical output are
+provided in Appendix Section \emph{Survey-wave and date mapping}.
+
+\subsection{Weighted descriptive adherence estimates}\label{weighted-descriptive-adherence-estimates}
+
+Weighted adherence percentages were calculated using the
+respondent-level survey-weight variable supplied with the Behaviour
+Tracker data (\citeproc{ref-jones2020}{Jones, Imperial College London Big Data Analytical Unit, and YouGov Plc 2020}). According to the repository documentation,
+the supplied weighting variable was typically based on respondents' age,
+gender, and region. The weights were used as provided in the dataset and
+were not constructed or recalibrated as part of this study. Their
+purpose in this analysis was to determine each respondent's contribution
+to the weighted adherence estimates.
+
+For behaviour \(b\), the weighted adherence proportion was calculated as
+
+\[
+\widehat{p}_{b}
+=
+\frac{\sum_{i=1}^{n} w_iY_{ib}}
+     {\sum_{i=1}^{n} w_i},
+\]
+
+where \(Y_{ib}\) was the binary adherence outcome for respondent \(i\) and
+behaviour \(b\), and \(w_i\) was the respondent's survey weight. Because
+adherence was coded as \texttt{1} and non-adherence as \texttt{0}, the weighted mean
+represented the weighted proportion classified as adherent. This
+proportion was multiplied by 100 and reported as a percentage. A
+respondent with a larger survey weight contributed proportionally more
+to both the numerator and denominator of the estimate. The analytical
+dataset did not contain the complete survey-design information required
+to reconstruct the supplied weights independently.
+
+The calculation was performed separately for each of the 14 behaviours
+across the complete survey period and within each of the nine six-wave
+blocks. For each estimate, observations were included only when both the
+relevant adherence outcome and survey weight were available. All 53,833
+responses had non-missing, positive survey weights. The handwashing and
+avoiding-guests variables each contained 1,006 missing responses,
+involving the same records, while the other 12 behaviour variables had
+no missing responses. Missing behaviour responses were excluded only
+from calculations involving that behaviour.
+
+For the descriptive cost-group trends, each respondent's available
+binary outcomes were averaged within the low-, medium-, and high-cost
+groups. These respondent-level group rates were then summarised using
+the survey weights within each six-wave block. The grouped estimates
+were used only to describe broad patterns; individual behaviours
+remained separate outcomes in the regression analysis.
+
+The same weighted calculation was used to estimate behaviour-specific
+adherence within each state or territory during qweeks 31--36 and qweeks
+37--42. Changes between these periods were calculated in percentage
+points by subtracting the earlier-period estimate from the later-period
+estimate.
+
+The corresponding code references and complete descriptive outputs are
+provided in Appendix Section \emph{Complete descriptive estimates}.
+
+\subsection{State-level descriptive comparison}\label{state-level-descriptive-comparison}
+
+A state-level descriptive comparison was conducted to examine whether
+the change observed in the national adherence estimates was similar
+across Australian states and territories. This comparison was included
+because the timing and extent of COVID-19 outbreaks and public-health
+measures varied between jurisdictions.
+
+The analysis compared qweeks 31--36 with qweeks 37--42. Based on the
+survey end dates, these periods covered 5 May to 27 July 2021 and 28
+July to 17 October 2021, respectively. For each state or territory
+represented in the dataset, weighted adherence percentages were
+calculated separately for the earlier and later periods using the same
+weighting procedure described above.
+
+For each jurisdiction and period, the respondent-level cost-group rates
+described above were summarised using survey weights. Change was
+calculated in percentage points as
+
+\[
+\text{Change}
+=
+\text{later-period adherence}
+-
+\text{earlier-period adherence}.
+\]
+
+A positive value represented an increase in weighted adherence between
+the two periods, while a negative value represented a decrease.
+
+This descriptive comparison summarised the direction and magnitude of
+changes across jurisdictions. The regression analysis then examined
+whether the period change differed across jurisdictions using
+state-by-period interaction terms.
+
+The unweighted sample sizes, weighted estimates, and percentage-point
+changes for each jurisdiction are reported in Tables
+\ref{tab:state-estimates} and \ref{tab:state-changes}.
+
+\subsection{Logistic regression models}\label{logistic-regression-models}
+
+The regression analysis examined whether adherence changed between the
+two selected periods and whether the size of this change differed across
+states and territories. Five behaviours were modelled separately because
+they recorded the largest descriptive increases between qweeks 31--36
+and qweeks 37--42:
+
+\begin{itemize}
+\tightlist
+\item
+  wearing a face mask outside the home;
+\item
+  avoiding having guests at home;
+\item
+  avoiding small social gatherings;
+\item
+  avoiding medium-sized social gatherings; and
+\item
+  avoiding large social gatherings.
+\end{itemize}
+
+For each behaviour, the outcome \(Y_i\) was coded as \texttt{1} for adherence and
+\texttt{0} for non-adherence. The analysis used responses from qweeks 31--42.
+The period variable was coded as \texttt{0} for qweeks 31--36 and \texttt{1} for
+qweeks 37--42.
+
+Two state-based models were fitted separately for each behaviour. Model
+2 included survey period and state or territory as main effects:
+
+\[
+\operatorname{logit}\{P(Y_i = 1)\}
+=
+\beta_0
++
+\beta_1\text{Period}_i
++
+\boldsymbol{\beta}_2\text{State}_i.
+\]
+
+Model 3 included the same main effects together with state-by-period
+interaction terms:
+
+\[
+\operatorname{logit}\{P(Y_i = 1)\}
+=
+\beta_0
++
+\beta_1\text{Period}_i
++
+\boldsymbol{\beta}_2\text{State}_i
++
+\boldsymbol{\beta}_3
+(\text{Period}_i \times \text{State}_i).
+\]
+
+The state variable was represented by indicator variables for the
+Australian states and territories. New South Wales was the reference
+jurisdiction, and qweeks 31--36 were the reference period. In Model 3,
+\(\beta_1\) estimated the period change for New South Wales. Each
+state-by-period interaction coefficient estimated how the period change
+for another jurisdiction differed from the New South Wales change.
+
+The models included 12,025 complete responses: 5,995 from qweeks 31--36
+and 6,030 from qweeks 37--42. The five adherence outcomes, state,
+period, and survey weight were complete for these responses.
+
+The models were fitted in Python using a binomial generalised linear
+model with a logit link. The respondent-level survey weights were
+incorporated into model fitting. HC1 robust covariance estimates were
+used to calculate coefficient standard errors, 95\% confidence intervals,
+and coefficient p-values (\citeproc{ref-seabold2010}{Seabold and Perktold 2010}). The corresponding software
+functions and implementation details are provided in Appendix Section
+\emph{Complete Model 3 coefficient outputs}.
+
+\subsection{Model comparison and statistical reporting}\label{model-comparison-and-statistical-reporting}
+
+For each of the five behaviours, Model 2 was treated as the reduced
+model and Model 3 as the full model. The models were compared using a
+likelihood-ratio test to assess whether adding the state-by-period
+interaction terms improved model fit.
+
+Model 3 contained seven additional interaction parameters, corresponding
+to the seven jurisdictions compared with New South Wales. Each
+likelihood-ratio test therefore used seven degrees of freedom. Test
+p-values were obtained from the chi-squared distribution
+(\citeproc{ref-virtanen2020}{Virtanen et al. 2020}). The computational implementation is documented in
+Appendix Section \emph{Likelihood-ratio test output}.
+
+Model 3 coefficients, odds ratios, 95\% confidence intervals, and
+coefficient p-values were extracted for statistical reporting. The
+period coefficient for New South Wales and the state-by-period
+interaction coefficients were used to describe the estimated period
+differences across jurisdictions. Complete Model 3 coefficient outputs
+are reported in Appendix Tables
+\ref{tab:model3-mask-appendix}--\ref{tab:model3-large-appendix}, and
+the likelihood-ratio test results are reported in Appendix Table
+\ref{tab:lr-tests-appendix}.
+
+\section{Results}\label{results}
+
+\subsection{Overall weighted adherence by behaviour}\label{overall-weighted-adherence-by-behaviour}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{../graphs and tables/01_overall_adherence_by_behaviour} 
+
+}
+
+\caption{Overall weighted adherence percentage by COVID-safe behaviour.}\label{fig:overall-adherence-figure}
+\end{figure}
+
+Figure 1 presents the overall weighted adherence percentages for the 14
+protective behaviours. The highest adherence was recorded for covering
+coughs or sneezes (90.9\%) and washing hands (89.7\%), while the lowest
+was recorded for avoiding shops (39.0\%), avoiding going out (49.3\%), and
+wearing a face mask outside the home (52.5\%).
+
+\subsection{Adherence trends across six-wave blocks}\label{adherence-trends-across-six-wave-blocks}
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=1\linewidth]{../graphs and tables/02_6week_cost_group_trend} 
+
+}
+
+\caption{Weighted adherence trends by behavioural-cost group across six-wave blocks.}\label{fig:cost-group-trends-figure}
+\end{figure}
+
+Figure 2 presents weighted adherence across the nine six-wave blocks.
+Low-cost adherence ranged from 84.0\% to 87.0\%, medium-cost adherence
+ranged from 55.4\% to 76.6\%, and high-cost adherence ranged from 41.0\% to
+78.6\%. The largest adjacent increase for the medium- and high-cost
+groups occurred between qweeks 31--36 and qweeks 37--42.
+
+\subsubsection{Individual medium-cost behaviour trends}\label{individual-medium-cost-behaviour-trends}
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=1\linewidth]{../graphs and tables/04_medium_behaviour_trend} 
+
+}
+
+\caption{Weighted adherence trends for medium-cost protective behaviours across six-wave blocks.}\label{fig:medium-cost-trends-figure}
+\end{figure}
+
+Figure 3 presents weighted adherence for the five medium-cost
+behaviours. Between qweeks 31--36 and qweeks 37--42, mask wearing
+increased from 52.5\% to 78.3\%, avoiding guests from 55.8\% to 72.1\%,
+avoiding crowded areas from 64.7\% to 76.6\%, avoiding public transport
+from 61.1\% to 72.9\%, and avoiding people with COVID-like symptoms from
+76.0\% to 83.0\%.
+
+\subsubsection{Individual high-cost behaviour trends}\label{individual-high-cost-behaviour-trends}
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=1\linewidth]{../graphs and tables/04_high_behaviour_trend} 
+
+}
+
+\caption{Weighted adherence trends for high-cost protective behaviours across six-wave blocks.}\label{fig:high-cost-trends-figure}
+\end{figure}
+
+Figure 4 presents weighted adherence for the six high-cost behaviours.
+Between qweeks 31--36 and qweeks 37--42, adherence increased from 49.5\% to
+66.7\% for avoiding small gatherings, 55.3\% to 71.4\% for avoiding
+medium-sized gatherings, 62.8\% to 77.5\% for avoiding large gatherings,
+45.4\% to 57.4\% for avoiding going out, 36.4\% to 48.1\% for avoiding
+shops, and 52.7\% to 61.9\% for avoiding healthcare settings.
+
+\subsection{Behaviour-level change between selected periods}\label{behaviour-level-change-between-selected-periods}
+
+\begin{longtable}[t]{llrrr}
+\caption{\label{tab:behaviour-period-change-table}Change in weighted adherence between qweeks 31--36 and qweeks 37--42 by behaviour.}\\
+\toprule
+Behaviour & Cost group & Earlier (\%) & Later (\%) & Change (pp)\\
+\midrule
+Wore mask outside home & Medium & 52.5 & 78.3 & 25.8\\
+Avoided small gatherings & High & 49.5 & 66.7 & 17.2\\
+Avoided guests at home & Medium & 55.8 & 72.1 & 16.3\\
+Avoided medium gatherings & High & 55.3 & 71.4 & 16.2\\
+Avoided large gatherings & High & 62.8 & 77.5 & 14.7\\
+\addlinespace
+Avoided going out & High & 45.4 & 57.4 & 12.0\\
+Avoided crowded areas & Medium & 64.7 & 76.6 & 11.9\\
+Avoided public transport & Medium & 61.1 & 72.9 & 11.8\\
+Avoided shops & High & 36.4 & 48.1 & 11.6\\
+Avoided healthcare settings & High & 52.7 & 61.9 & 9.2\\
+\addlinespace
+Avoided symptomatic people & Medium & 76.0 & 83.0 & 7.0\\
+Covered cough/sneeze & Low & 91.0 & 92.7 & 1.7\\
+Washed hands & Low & 89.5 & 90.6 & 1.1\\
+Used sanitiser & Low & 76.8 & 77.7 & 0.9\\
+\bottomrule
+\end{longtable}
+
+Table \ref{tab:behaviour-period-change-table} reports the change
+between qweeks 31--36 and qweeks 37--42 for all 14 behaviours. Mask
+wearing recorded the largest increase at 25.8 percentage points,
+followed by avoiding small gatherings at 17.2 percentage points,
+avoiding guests at home at 16.3 percentage points, avoiding medium-sized
+gatherings at 16.2 percentage points, and avoiding large gatherings at
+14.7 percentage points. The three low-cost behaviours changed by between
+0.9 and 1.7 percentage points.
+
+\subsection{State-level descriptive changes}\label{state-level-descriptive-changes}
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=1\linewidth]{../graphs and tables/03_state_surge_change} 
+
+}
+
+\caption{Change in weighted adherence between qweeks 31--36 and qweeks 37--42 by state or territory for the medium- and high-cost groups.}\label{fig:state-period-change-figure}
+\end{figure}
+
+Figure 5 presents the change in medium- and high-cost adherence between
+the selected periods across states and territories. Medium-cost changes
+ranged from -16.2 to 29.9 percentage points, while high-cost changes
+ranged from -14.4 to 32.4 percentage points. Low-cost changes are
+reported in Appendix Table 12.
+
+\subsection{Logistic regression results}\label{logistic-regression-results}
+
+\begingroup
+\footnotesize
+
+\begin{longtable}[t]{lrrll}
+\caption{\label{tab:model-3-period-results}Later-period coefficients and odds ratios for New South Wales from the state-by-period interaction models.}\\
+\toprule
+Behaviour & Period coefficient & Odds ratio & 95\% confidence interval & P-value\\
+\midrule
+Wearing a face mask outside the home & 2.2449 & 9.44 & 7.75--11.50 & <0.001\\
+Avoiding guests at home & 1.5462 & 4.69 & 3.97--5.54 & <0.001\\
+Avoiding small gatherings & 1.4214 & 4.14 & 3.56--4.83 & <0.001\\
+Avoiding medium-sized gatherings & 1.4860 & 4.42 & 3.75--5.21 & <0.001\\
+Avoiding large gatherings & 1.6567 & 5.24 & 4.35--6.32 & <0.001\\
+\bottomrule
+\end{longtable}
+
+\endgroup
+
+Table \ref{tab:model-3-period-results} reports the later-period
+coefficients and odds ratios for New South Wales from the five
+state-by-period interaction models. All five period coefficients were
+positive and statistically significant at \(p < 0.001\). The corresponding
+odds ratios ranged from 4.14 for avoiding small gatherings to 9.44 for
+mask wearing. Complete state main effects and interaction coefficients
+are reported in Appendix Tables 13--17.
+
+\subsection{Model comparison results}\label{model-comparison-results}
+
+\begin{longtable}[t]{lrrl}
+\caption{\label{tab:model-comparison-table}Likelihood-ratio tests comparing the period-plus-state model (Model 2) with the state-by-period interaction model (Model 3).}\\
+\toprule
+Behaviour & LR statistic & Degrees of freedom & P-value\\
+\midrule
+Mask wearing & 662.42 & 7 & <0.001\\
+Avoiding guests & 338.32 & 7 & <0.001\\
+Avoiding small gatherings & 286.52 & 7 & <0.001\\
+Avoiding medium gatherings & 338.39 & 7 & <0.001\\
+Avoiding large gatherings & 345.28 & 7 & <0.001\\
+\bottomrule
+\end{longtable}
+
+Table \ref{tab:model-comparison-table} reports the likelihood-ratio
+tests comparing Model 2 with Model 3. The likelihood-ratio statistics
+ranged from 286.52 to 662.42, with seven degrees of freedom for each
+comparison. All five tests had \(p < 0.001\). For each behaviour, the
+state-by-period interaction model therefore fitted the data better than
+the period-plus-state model.
+
+\section{Discussion}\label{discussion}
+
+\subsection{Behavioural cost and adherence over time}\label{behavioural-cost-and-adherence-over-time}
+
+The results provide general support for the idea that higher-cost
+protective behaviours were less stable over time than low-cost
+behaviours. Across the nine six-wave blocks, adherence to low-cost
+hygiene behaviours remained relatively high, ranging from
+approximately 84\% to 87\%. Meanwhile, the medium- and high-cost groups
+showed substantially greater variation across the survey period.
+
+This difference was also visible between qweeks 31--36 and qweeks
+37--42. Covering coughs or sneezes, washing hands, and using hand
+sanitiser increased by only 1.7, 1.1, and 0.9 percentage points,
+respectively. These behaviours already had relatively high adherence and
+could generally be performed without changing movement or
+social contact. Their stability is consistent with earlier Australian
+research showing that hygiene behaviours remained comparatively stable
+while physical-distancing behaviours fluctuated over time (\citeproc{ref-ayre2021}{Ayre et al. 2021, 1}).
+
+However, behavioural cost did not completely shape adherence. Some
+medium- and high-cost behaviours increased sharply during the later
+period. This indicates that the burden of a behaviour can be outweighed
+by other influences, including outbreak severity, perceived infection
+risk, social expectations, and public-health rules. This is consistent
+with evidence that response costs do not affect all protective
+behaviours in the same way (\citeproc{ref-hinssen2023}{Hinssen and Dohle 2023, sec. 4}). Behavioural cost
+should therefore be understood as one influence on adherence than
+as a complete explanation of behaviour.
+
+\subsection{Behaviour-specific patterns and public-health context}\label{behaviour-specific-patterns-and-public-health-context}
+
+Mask wearing showed the largest increase between the selected periods,
+rising by 25.8 percentage points. The next largest changes were seen for
+avoiding small gatherings at 17.2 percentage points, avoiding guests at
+home at 16.3 percentage points, avoiding medium-sized gatherings at 16.2
+percentage points, and avoiding large gatherings at 14.7 percentage
+points.
+
+Mask wearing differed from many other behaviours because it could be
+directly required in particular settings. During the later period, mask
+requirements were introduced or strengthened in New South Wales,
+Victoria, and the Australian Capital Territory (\citeproc{ref-nsw_health_2021}{NSW Health 2021, paras. 1--3}; \citeproc{ref-vic_premier_2021}{State Government of Victoria 2021, paras. 1--7}; \citeproc{ref-act_gov_2021}{Barr and Stephen-Smith 2021, paras. 1--6}). This
+provides a plausible explanation for why mask adherence increased more
+than the other behaviours. Australian research has also shown that mask
+mandates altered important determinants of adherence to protective
+health behaviours (\citeproc{ref-ryan2025}{Ryan et al. 2025, 1}).
+
+Avoiding guests and gatherings also increased substantially.
+Restrictions introduced in several jurisdictions limited household
+visitors, private and public gatherings, and permitted reasons for
+leaving home (\citeproc{ref-vic_premier_2021}{State Government of Victoria 2021, paras. 1--7}; \citeproc{ref-act_gov_2021}{Barr and Stephen-Smith 2021, paras. 1--6}; \citeproc{ref-abc_sa_2021}{ABC News 2021, paras. 1--12}). These rules directly corresponded to
+the behaviours measured in the survey, which may help explain their
+simultaneous increases.
+
+Changes in other movement-related behaviours were smaller. Avoiding
+going out, shops, crowded areas, public transport, and healthcare
+settings required greater changes to normal activities. However, some
+movement remained necessary because restrictions continued to permit
+essential shopping, healthcare, care responsibilities, and authorised
+work (\citeproc{ref-vic_premier_2021}{State Government of Victoria 2021, paras. 1--7}; \citeproc{ref-act_gov_2021}{Barr and Stephen-Smith 2021, paras. 1--6}; \citeproc{ref-abc_sa_2021}{ABC News 2021, paras. 1--12}). This may explain why adherence to avoiding
+shops and healthcare settings remained lower than adherence to avoiding
+gatherings.
+
+These interpretations remain cautious because the selected periods
+contained several simultaneous changes. Outbreak conditions,
+restrictions, media coverage, perceived risk, and social expectations
+changed together. The analysis therefore cannot separate the effect of a
+particular mandate or restriction from these other influences.
+
+\subsection{State-level variation and model interpretation}\label{state-level-variation-and-model-interpretation}
+
+The direction and magnitude of adherence changes varied across
+Australian states. During the selected qweek period, medium-cost
+adherence changes ranged from a decrease of 16.2 percentage points in
+Western Australia to an increase of 29.9 percentage points in the
+Australian Capital Territory. High-cost changes ranged from a decrease
+of 14.4 percentage points in Western Australia to an increase of 32.4
+percentage points in the Australian Capital Territory.
+
+New South Wales and Victoria also recorded substantial increases in
+medium- and high-cost adherence. These jurisdictions experienced major
+Delta outbreaks and stronger restrictions during the later period. The
+Australian Capital Territory entered lockdown in August 2021 and
+introduced mandatory masks, retail restrictions, and limits on household
+and social contact (\citeproc{ref-act_gov_2021}{Barr and Stephen-Smith 2021, paras. 1--6}). These conditions
+correspond closely to the behaviours that increased.
+
+Western Australia showed the opposite pattern, with decreases in both
+medium- and high-cost adherence. During part of the selected period,
+Western Australia was removing mask and crowd restrictions following an
+absence of new local cases (\citeproc{ref-abc_wa_2021}{Perpitch 2021, paras. 1--5}). This contrast is
+consistent with adherence changing differently in jurisdictions
+experiencing different outbreak and policy conditions.
+
+The regression results provided further evidence that the period change
+differed across jurisdictions. For all five behaviours, the
+state-by-period interaction model fitted significantly better than the
+model containing only period and state main effects, with all
+likelihood-ratio tests having \(p < 0.001\). This means that allowing each
+jurisdiction to have a different period change improved the models.
+
+For New South Wales, the estimated later-period odds ratios ranged from
+4.14 for avoiding small gatherings to 9.44 for mask wearing. These
+values represent multiplicative changes in the odds of adherence. For
+example, the mask odds ratio of 9.44 means that the estimated odds of
+reporting mask adherence in New South Wales were approximately 9.44
+times higher during the later period than during the earlier period.
+
+The interaction terms compared each state's period change with
+the New South Wales change. A negative interaction coefficient indicated
+that the increase was smaller than the New South Wales increase, while a
+positive coefficient indicated a larger change. However, the models
+identify statistical differences between jurisdictions and they also do not
+show that particular policies caused those differences.
+
+\subsection{Limitations}\label{limitations}
+
+The Behaviour Tracker data were repeated cross-sectional. Different respondents were surveyed across waves, so the findings represent population-level differences between periods rather than changes within the same individuals.
+
+The comparison between qweeks 31--36 and qweeks 37--42 was selected
+after examining the descriptive trends. It was therefore exploratory and
+should not be interpreted as a pre-specified evaluation of a particular
+policy.
+
+The timing of the changes in adherence overlapped with the Delta outbreak and changes
+in public-health measures across different states, but the analysis does not establish
+causation. Outbreak severity, perceived risk, media coverage, social expectations, and other unmeasured factors also have influenced adherence.
+
+The behavioural-cost classification was developed specifically for this
+project and involved literature based judgement. The burden associated with a behaviour
+may differ between individuals according to their employment, health,
+household circumstances, transport access, and financial position.
+
+Adherence was measured through self-reported survey responses.
+Respondents may have understood the questions differently or reported
+socially desirable behaviour. Survey weighting improves the population
+relevance of the estimates but cannot remove every form of sampling or
+response bias.
+
+Grouping the survey waves into six-wave blocks made the broad trends
+easier to observe, but it may have concealed shorter changes within
+individual waves. Estimates for smaller jurisdictions should also be
+interpreted cautiously because they were based on fewer responses. The
+state-level percentage-point comparisons were descriptive and did not
+test whether each jurisdiction's individual change was statistically
+significant. They also cannot attribute the national adherence pattern
+causally to particular jurisdictions.
+
+Finally, the regression analysis covered only the five behaviours with
+the largest descriptive increases and did not adjust for demographic
+characteristics. The supplied respondent-level weights were used for the
+descriptive estimates and were implemented as frequency weights in the
+regression models. The analytical dataset did not include the complete
+survey-design information required to reconstruct the weights or conduct
+a full design-based survey analysis. The resulting regression estimates
+should therefore be interpreted as weighted model-based estimates rather
+than design-based causal effects.
+
+\subsection{Future research}\label{future-research}
+
+Future research could include detailed state-level measures of outbreak
+severity, policy timing, and restriction intensity. This would allow the
+relationship between adherence and particular public-health measures to
+be examined more directly.
+
+Further models could adjust for demographic characteristics such as age,
+gender and employment. Alternative behavioural-cost classifications could also be tested to determine whether the conclusions depend on the behavioural cost scoring framework.
+
+Longitudinal data linking the same individuals across survey waves would
+allow future studies to distinguish changes within individuals from
+changes in the composition of the surveyed population.
+
+\section{Conclusion}\label{conclusion}
+
+Answering the research question, higher-cost COVID-safe
+behaviours were generally less stable over time than low-cost hygiene
+behaviours. Low-cost behaviours remained comparatively high and stable,
+while medium- and high-cost behaviours showed greater variation.
+However, behavioural cost alone did not explain every behaviour-specific
+pattern.
+
+The largest increases between qweeks 31--36 and qweeks 37--42 occurred
+for mask wearing, avoiding guests, and avoiding small, medium-sized, and
+large gatherings. The regression models also showed that the size of
+these changes varied across states and territories.
+
+The timing of these increases in adherence coincided with the 2021 Delta
+outbreak and stronger public-health measures across several states and
+territories. However, because the analysis used repeated cross-sectional
+data and the periods were selected exploratorily, it cannot establish
+that individual policies caused the observed changes. Overall, the
+findings suggest that the adherence was related to both the burden of the
+behaviour and the jurisdiction-specific outbreak and policy context.
+
+\clearpage
+
+\section{Acknowledgements}\label{acknowledgements}
+
+I would like to acknowledge the guidance and feedback provided by my
+project supervisor throughout the development of this project.
+
+The analysis code, report source files, figures, tables, and numerical
+outputs for this project are available in the following public GitHub
+repository: {[}LINK{]}.
+
+OpenAI's ChatGPT was used as a learning and editing aid to support my understanding of statistical concepts and to provide feedback on clarity, structure, grammar, and wording. I independently reviewed and revised the final report, checked the numerical results against the analysis code and saved outputs, and accept responsibility for the submitted work.
+
+\section{References}\label{references}
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-abc_sa_2021}
+ABC News. 2021. {``South Australia 'Moves into Lockdown' After Five COVID Cases Associated with Modbury Hospital Cluster.''} \url{https://www.abc.net.au/news/2021-07-20/south-australia-moves-into-lockdown/100306696}.
+
+\bibitem[\citeproctext]{ref-abs_delta_2022}
+Australian Bureau of Statistics. 2022. {``Effects of COVID-19 Strains on the Australian Economy.''} \url{https://www.abs.gov.au/articles/effects-covid-19-strains-australian-economy}.
+
+\bibitem[\citeproctext]{ref-ayre2021}
+Ayre, Julie, Erin Cvejic, Kirsten McCaffery, Tessa Copp, Samuel Cornell, Rachael H. Dodd, Kristen Pickles, et al. 2021. {``Contextualising COVID-19 Prevention Behaviour over Time in Australia: Patterns and Long-Term Predictors from April to July 2020 in an Online Social Media Sample.''} \emph{PLOS ONE} 16 (6): e0253930. \url{https://doi.org/10.1371/journal.pone.0253930}.
+
+\bibitem[\citeproctext]{ref-act_gov_2021}
+Barr, Andrew, and Rachel Stephen-Smith. 2021. {``COVID-19 Statement: ACT to Enter Seven Day Lockdown.''} ACT Government. \url{https://www.cmtedd.act.gov.au/open_government/inform/act_government_media_releases/rachel-stephen-smith-mla-media-releases/2021/covid-19-statement-act-to-enter-seven-day-lockdown}.
+
+\bibitem[\citeproctext]{ref-hinssen2023}
+Hinssen, Marina, and Simone Dohle. 2023. {``Personal Protective Behaviors in Response to COVID-19: A Longitudinal Application of Protection Motivation Theory.''} \emph{Frontiers in Psychology} 14: 1195607. \url{https://doi.org/10.3389/fpsyg.2023.1195607}.
+
+\bibitem[\citeproctext]{ref-hosmer2013}
+Hosmer, David W., Stanley Lemeshow, and Rodney X. Sturdivant. 2013. \emph{Applied Logistic Regression}. 3rd ed. Hoboken, NJ: John Wiley \& Sons.
+
+\bibitem[\citeproctext]{ref-jones2020}
+Jones, S. P., Imperial College London Big Data Analytical Unit, and YouGov Plc. 2020. {``Imperial College London YouGov COVID Data Hub.''} Version 1.0, YouGov Plc. \url{https://github.com/YouGov-Data/covid-19-tracker}.
+
+\bibitem[\citeproctext]{ref-nsw_health_2021}
+NSW Health. 2021. {``Fighting the Delta Outbreak with New Restrictions for Local Government Areas (LGAs) of Concern.''} \url{https://www.health.nsw.gov.au/news/Pages/20210730_01.aspx}.
+
+\bibitem[\citeproctext]{ref-abc_wa_2021}
+Perpitch, Nicolas. 2021. {``Perth Set to Return to Pre-Lockdown Life, Small Businesses Offered \$3,000 Support Grants.''} ABC News. \url{https://www.abc.net.au/news/2021-07-09/wa-returns-to-pre-lockdown-life/100280650}.
+
+\bibitem[\citeproctext]{ref-ryan2025}
+Ryan, Matthew, Jinjing Ye, Justin Sexton, Roslyn I. Hickson, and Emily Brindal. 2025. {``Face Mask Mandates Alter Major Determinants of Adherence to Protective Health Behaviours in Australia.''} \emph{Royal Society Open Science} 12: 241941. \url{https://doi.org/10.1098/rsos.241941}.
+
+\bibitem[\citeproctext]{ref-seabold2010}
+Seabold, Skipper, and Josef Perktold. 2010. {``Statsmodels: Econometric and Statistical Modeling with Python.''} In \emph{Proceedings of the 9th Python in Science Conference}, 92--96. \url{https://doi.org/10.25080/Majora-92bf1922-011}.
+
+\bibitem[\citeproctext]{ref-vic_premier_2021}
+State Government of Victoria. 2021. {``Seven Day Lockdown to Keep Victorians Safe.''} \url{https://www.premier.vic.gov.au/site-4/seven-day-lockdown-keep-victorians-safe}.
+
+\bibitem[\citeproctext]{ref-virtanen2020}
+Virtanen, Pauli, Ralf Gommers, Travis E. Oliphant, Matt Haberland, Tyler Reddy, David Cournapeau, Evgeni Burovski, et al. 2020. {``SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python.''} \emph{Nature Methods} 17 (3): 261--72. \url{https://doi.org/10.1038/s41592-019-0686-2}.
+
+\end{CSLReferences}
+
+\clearpage
+
+\section{Appendix}\label{appendix}
+
+\subsection{Data preparation and code references}\label{data-preparation-and-code-references}
+
+The initial data preparation was carried out in \texttt{Data\ cleaning.ipynb}.
+The dataset structure and data-quality checks are contained under
+``Initial Data Quality Check'' and ``Final dataset structure check''.
+Selection and renaming of the analysis variables are documented under
+``Define important columns for my analysis'' and ``Rename important columns
+to usable names''. The creation of the 14 binary adherence outcomes is
+documented under ``Create binary adherence variables for each behaviour''.
+
+The cleaned wide-format dataset produced by these steps was saved as
+\texttt{UGov\_Data.csv}. These are repository-relative file names; the complete
+files are available through the public GitHub repository identified in
+the Acknowledgements.
+
+\small
+
+\subsection{Behavioural-cost scoring matrix}\label{behavioural-cost-scoring-matrix}
+
+Each behaviour was scored from 1 to 3 across practical effort, social
+disruption, lifestyle restriction, emotional burden, and financial
+burden. The five scores were summed to obtain the total burden score.
+Total scores of 5--6 were classified as low cost, 7--9 as medium cost,
+and 10--15 as high cost. Table \ref{tab:cost-scoring} presents the
+complete scoring matrix used in the analysis.
+
+\textbf{Code and source files:} The scoring rationale is documented in
+\texttt{Classification\ of\ Protection\ Behaviours.docx}. The grouping used in the
+analysis is implemented in \texttt{EDA.ipynb}, under ``Behaviour columns in wide
+format''. The table below is generated from
+\texttt{graphs\ and\ tables/appendix\_A1\_cost\_scoring.csv}.
+
+\begin{landscape}
+
+\begin{table}
+
+\caption{\label{tab:cost-scoring}Behavioural-cost scoring matrix used to classify the 14 protective behaviours.}
+\centering
+\begin{tabular}[t]{lrrrrrrl}
+\toprule
+Behaviour & Practical & Social & Lifestyle & Emotional & Financial & Total & Group\\
+\midrule
+Covering nose/mouth when sneezing or coughing & 1 & 1 & 1 & 1 & 1 & 5 & Low\\
+Washing hands with soap and water & 1 & 1 & 1 & 1 & 1 & 5 & Low\\
+Using hand sanitiser & 1 & 1 & 1 & 1 & 2 & 6 & Low\\
+Wore mask outside home & 2 & 2 & 1 & 2 & 1 & 8 & Medium\\
+Avoiding contact with symptomatic people & 1 & 2 & 1 & 2 & 1 & 7 & Medium\\
+\addlinespace
+Avoiding crowded areas & 1 & 2 & 2 & 2 & 1 & 8 & Medium\\
+Avoiding public transport & 2 & 1 & 2 & 2 & 1 & 8 & Medium\\
+Avoiding having guests at home & 1 & 2 & 2 & 2 & 1 & 8 & Medium\\
+Avoiding small social gatherings & 2 & 2 & 2 & 3 & 1 & 10 & High\\
+Avoiding medium social gatherings & 1 & 3 & 2 & 3 & 1 & 10 & High\\
+\addlinespace
+Avoiding large social gatherings & 1 & 3 & 2 & 3 & 1 & 10 & High\\
+Avoiding going out in general & 2 & 3 & 3 & 3 & 1 & 12 & High\\
+Avoiding going to shops & 2 & 2 & 3 & 2 & 1 & 10 & High\\
+Avoiding going to healthcare settings & 2 & 1 & 3 & 3 & 1 & 10 & High\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{landscape}
+
+\subsection{Survey-wave and date mapping}\label{survey-wave-and-date-mapping}
+
+Table \ref{tab:qweek-dates} reports the observed response-date range,
+six-wave block, and unweighted number of responses for each \texttt{qweek}.
+
+\textbf{Code and saved output:} The numeric survey-wave ordering was created
+in \texttt{Data\ cleaning.ipynb} during the construction of \texttt{week\_num}. The
+observed date ranges were obtained from \texttt{response\_time}. The table below
+is generated from \texttt{graphs\ and\ tables/appendix\_A2\_qweek\_dates.csv}.
+
+\begin{longtable}[t]{rlllr}
+\caption{\label{tab:qweek-dates}Observed response-date range and six-wave block for each survey wave.}\\
+\toprule
+qweek & Survey start date & Survey end date & Six-wave block & Unweighted n\\
+\midrule
+1 & 01 Apr 2020 & 03 Apr 2020 & 1--6 & 973\\
+2 & 07 Apr 2020 & 09 Apr 2020 & 1--6 & 1006\\
+3 & 15 Apr 2020 & 20 Apr 2020 & 1--6 & 1002\\
+4 & 21 Apr 2020 & 24 Apr 2020 & 1--6 & 1004\\
+5 & 30 Apr 2020 & 04 May 2020 & 1--6 & 1007\\
+\addlinespace
+6 & 06 May 2020 & 07 May 2020 & 1--6 & 1014\\
+7 & 15 May 2020 & 18 May 2020 & 7--12 & 1008\\
+8 & 03 Jun 2020 & 05 Jun 2020 & 7--12 & 1004\\
+9 & 09 Jun 2020 & 11 Jun 2020 & 7--12 & 1005\\
+10 & 24 Jun 2020 & 28 Jun 2020 & 7--12 & 1009\\
+\addlinespace
+11 & 08 Jul 2020 & 13 Jul 2020 & 7--12 & 1010\\
+12 & 22 Jul 2020 & 27 Jul 2020 & 7--12 & 1001\\
+13 & 06 Aug 2020 & 10 Aug 2020 & 13--18 & 1003\\
+14 & 20 Aug 2020 & 25 Aug 2020 & 13--18 & 1013\\
+15 & 02 Sep 2020 & 07 Sep 2020 & 13--18 & 1009\\
+\addlinespace
+16 & 16 Sep 2020 & 26 Sep 2020 & 13--18 & 1001\\
+17 & 02 Oct 2020 & 12 Oct 2020 & 13--18 & 1000\\
+18 & 14 Oct 2020 & 19 Oct 2020 & 13--18 & 1006\\
+19 & 28 Oct 2020 & 04 Nov 2020 & 19--24 & 999\\
+20 & 11 Nov 2020 & 17 Nov 2020 & 19--24 & 1001\\
+\addlinespace
+21 & 16 Dec 2020 & 30 Dec 2020 & 19--24 & 1002\\
+22 & 30 Dec 2020 & 05 Jan 2021 & 19--24 & 924\\
+23 & 13 Jan 2021 & 26 Jan 2021 & 19--24 & 1001\\
+24 & 27 Jan 2021 & 08 Feb 2021 & 19--24 & 1003\\
+25 & 10 Feb 2021 & 23 Feb 2021 & 25--30 & 1011\\
+\addlinespace
+26 & 24 Feb 2021 & 05 Mar 2021 & 25--30 & 966\\
+27 & 10 Mar 2021 & 19 Mar 2021 & 25--30 & 944\\
+28 & 24 Mar 2021 & 06 Apr 2021 & 25--30 & 1004\\
+29 & 07 Apr 2021 & 19 Apr 2021 & 25--30 & 1004\\
+30 & 21 Apr 2021 & 05 May 2021 & 25--30 & 1003\\
+\addlinespace
+31 & 05 May 2021 & 18 May 2021 & 31--36 & 969\\
+32 & 19 May 2021 & 01 Jun 2021 & 31--36 & 1001\\
+33 & 02 Jun 2021 & 14 Jun 2021 & 31--36 & 1002\\
+34 & 16 Jun 2021 & 28 Jun 2021 & 31--36 & 1009\\
+35 & 30 Jun 2021 & 13 Jul 2021 & 31--36 & 1006\\
+\addlinespace
+36 & 14 Jul 2021 & 27 Jul 2021 & 31--36 & 1008\\
+37 & 28 Jul 2021 & 05 Aug 2021 & 37--42 & 1001\\
+38 & 11 Aug 2021 & 17 Aug 2021 & 37--42 & 1001\\
+39 & 23 Aug 2021 & 06 Sep 2021 & 37--42 & 1005\\
+40 & 07 Sep 2021 & 17 Sep 2021 & 37--42 & 1011\\
+\addlinespace
+41 & 20 Sep 2021 & 03 Oct 2021 & 37--42 & 1006\\
+42 & 04 Oct 2021 & 17 Oct 2021 & 37--42 & 1006\\
+43 & 18 Oct 2021 & 26 Oct 2021 & 43--48 & 1007\\
+44 & 01 Nov 2021 & 09 Nov 2021 & 43--48 & 1002\\
+45 & 16 Nov 2021 & 23 Nov 2021 & 43--48 & 1021\\
+\addlinespace
+46 & 29 Nov 2021 & 10 Dec 2021 & 43--48 & 1006\\
+47 & 14 Dec 2021 & 29 Dec 2021 & 43--48 & 978\\
+48 & 27 Dec 2021 & 05 Jan 2022 & 43--48 & 1011\\
+49 & 10 Jan 2022 & 24 Jan 2022 & 49--54 & 1010\\
+50 & 24 Jan 2022 & 01 Feb 2022 & 49--54 & 1007\\
+\addlinespace
+51 & 07 Feb 2022 & 16 Feb 2022 & 49--54 & 897\\
+52 & 21 Feb 2022 & 01 Mar 2022 & 49--54 & 930\\
+53 & 07 Mar 2022 & 16 Mar 2022 & 49--54 & 996\\
+54 & 21 Mar 2022 & 28 Mar 2022 & 49--54 & 1006\\
+\bottomrule
+\end{longtable}
+
+\subsection{Complete descriptive estimates}\label{complete-descriptive-estimates}
+
+\subsubsection{Overall adherence estimates}\label{overall-adherence-estimates}
+
+\textbf{Code and saved output:} These estimates were generated in
+\texttt{EDA.ipynb}, under ``Overall behaviour summary and plot''. The table is
+generated from \texttt{graphs\ and\ tables/appendix\_A3\_overall\_adherence.csv}.
+
+\begin{longtable}[t]{llrr}
+\caption{\label{tab:overall-adherence-appendix}Overall weighted adherence estimates for the 14 protective behaviours.}\\
+\toprule
+Behaviour & Cost group & Valid responses & Weighted adherence (\%)\\
+\midrule
+Covered coughs or sneezes & Low & 53833 & 90.9\\
+Washed hands & Low & 52827 & 89.7\\
+Avoided symptomatic people & Medium & 53833 & 77.7\\
+Used hand sanitiser & Low & 53833 & 76.6\\
+Avoided crowded areas & Medium & 53833 & 70.8\\
+\addlinespace
+Avoided large gatherings & High & 53833 & 69.3\\
+Avoided public transport & Medium & 53833 & 66.0\\
+Avoided medium gatherings & High & 53833 & 60.4\\
+Avoided guests at home & Medium & 52827 & 60.3\\
+Avoided healthcare settings & High & 53833 & 54.9\\
+\addlinespace
+Avoided small gatherings & High & 53833 & 53.9\\
+Wore mask outside home & Medium & 53833 & 52.5\\
+Avoided going out & High & 53833 & 49.3\\
+Avoided shops & High & 53833 & 39.0\\
+\bottomrule
+\end{longtable}
+
+\subsubsection{Behavioural-cost group trends}\label{behavioural-cost-group-trends}
+
+\textbf{Code and saved output:} These estimates were generated in
+\texttt{EDA.ipynb}, under ``Create equal six-wave blocks''. The table is
+generated from \texttt{graphs\ and\ tables/appendix\_A4\_cost\_group\_trends.csv}.
+
+\begin{longtable}[t]{lrrr}
+\caption{\label{tab:cost-trends-appendix}Weighted adherence estimates by behavioural-cost group and six-wave block.}\\
+\toprule
+Six-wave block & Low cost (\%) & Medium cost (\%) & High cost (\%)\\
+\midrule
+1--6 & 85.7 & 73.3 & 78.6\\
+7--12 & 86.1 & 63.1 & 58.6\\
+13--18 & 86.7 & 63.8 & 54.0\\
+19--24 & 86.7 & 60.6 & 46.6\\
+25--30 & 85.0 & 55.4 & 41.0\\
+\addlinespace
+31--36 & 85.8 & 62.0 & 50.4\\
+37--42 & 87.0 & 76.6 & 63.8\\
+43--48 & 84.0 & 65.6 & 47.7\\
+49--54 & 84.0 & 68.7 & 49.3\\
+\bottomrule
+\end{longtable}
+
+\subsubsection{Medium-cost behaviour trends}\label{medium-cost-behaviour-trends}
+
+\textbf{Code and saved output:} These estimates were generated in
+\texttt{EDA.ipynb}, under ``Individual behaviour trends by six-wave block''. The
+table is generated from
+\texttt{graphs\ and\ tables/appendix\_A5\_medium\_behaviour\_trends.csv}.
+
+\begin{longtable}[t]{lllr}
+\caption{\label{tab:medium-trends-appendix}Weighted adherence estimates for medium-cost behaviours by six-wave block.}\\
+\toprule
+Six-wave block & Behaviour & Cost group & Weighted adherence (\%)\\
+\midrule
+1--6 & Wore mask outside home & Medium & 24.6\\
+1--6 & Avoided symptomatic people & Medium & 85.2\\
+1--6 & Avoided crowded areas & Medium & 88.3\\
+1--6 & Avoided public transport & Medium & 82.6\\
+1--6 & Avoided guests at home & Medium & 85.7\\
+\addlinespace
+7--12 & Wore mask outside home & Medium & 24.3\\
+7--12 & Avoided symptomatic people & Medium & 78.1\\
+7--12 & Avoided crowded areas & Medium & 77.6\\
+7--12 & Avoided public transport & Medium & 71.4\\
+7--12 & Avoided guests at home & Medium & 64.0\\
+\addlinespace
+13--18 & Wore mask outside home & Medium & 47.7\\
+13--18 & Avoided symptomatic people & Medium & 74.1\\
+13--18 & Avoided crowded areas & Medium & 72.7\\
+13--18 & Avoided public transport & Medium & 65.4\\
+13--18 & Avoided guests at home & Medium & 59.2\\
+\addlinespace
+19--24 & Wore mask outside home & Medium & 48.3\\
+19--24 & Avoided symptomatic people & Medium & 74.7\\
+19--24 & Avoided crowded areas & Medium & 66.8\\
+19--24 & Avoided public transport & Medium & 61.8\\
+19--24 & Avoided guests at home & Medium & 51.2\\
+\addlinespace
+25--30 & Wore mask outside home & Medium & 43.5\\
+25--30 & Avoided symptomatic people & Medium & 72.2\\
+25--30 & Avoided crowded areas & Medium & 59.0\\
+25--30 & Avoided public transport & Medium & 55.1\\
+25--30 & Avoided guests at home & Medium & 47.0\\
+\addlinespace
+31--36 & Wore mask outside home & Medium & 52.5\\
+31--36 & Avoided symptomatic people & Medium & 76.0\\
+31--36 & Avoided crowded areas & Medium & 64.7\\
+31--36 & Avoided public transport & Medium & 61.1\\
+31--36 & Avoided guests at home & Medium & 55.8\\
+\addlinespace
+37--42 & Wore mask outside home & Medium & 78.3\\
+37--42 & Avoided symptomatic people & Medium & 83.0\\
+37--42 & Avoided crowded areas & Medium & 76.6\\
+37--42 & Avoided public transport & Medium & 72.9\\
+37--42 & Avoided guests at home & Medium & 72.1\\
+\addlinespace
+43--48 & Wore mask outside home & Medium & 73.0\\
+43--48 & Avoided symptomatic people & Medium & 76.5\\
+43--48 & Avoided crowded areas & Medium & 64.6\\
+43--48 & Avoided public transport & Medium & 61.5\\
+43--48 & Avoided guests at home & Medium & 52.4\\
+\addlinespace
+49--54 & Wore mask outside home & Medium & 80.6\\
+49--54 & Avoided symptomatic people & Medium & 79.1\\
+49--54 & Avoided crowded areas & Medium & 66.8\\
+49--54 & Avoided public transport & Medium & 61.7\\
+49--54 & Avoided guests at home & Medium & 53.9\\
+\bottomrule
+\end{longtable}
+
+\subsubsection{High-cost behaviour trends}\label{high-cost-behaviour-trends}
+
+\textbf{Code and saved output:} These estimates were generated in
+\texttt{EDA.ipynb}, under ``Individual behaviour trends by six-wave block''. The
+table is generated from
+\texttt{graphs\ and\ tables/appendix\_A6\_high\_behaviour\_trends.csv}.
+
+\begin{longtable}[t]{lllr}
+\caption{\label{tab:high-trends-appendix}Weighted adherence estimates for high-cost behaviours by six-wave block.}\\
+\toprule
+Six-wave block & Behaviour & Cost group & Weighted adherence (\%)\\
+\midrule
+1--6 & Avoided small gatherings & High & 84.0\\
+1--6 & Avoided medium gatherings & High & 89.7\\
+1--6 & Avoided large gatherings & High & 91.9\\
+1--6 & Avoided going out & High & 75.7\\
+1--6 & Avoided shops & High & 58.8\\
+\addlinespace
+1--6 & Avoided healthcare settings & High & 71.7\\
+7--12 & Avoided small gatherings & High & 56.6\\
+7--12 & Avoided medium gatherings & High & 66.5\\
+7--12 & Avoided large gatherings & High & 77.7\\
+7--12 & Avoided going out & High & 53.5\\
+\addlinespace
+7--12 & Avoided shops & High & 42.4\\
+7--12 & Avoided healthcare settings & High & 54.9\\
+13--18 & Avoided small gatherings & High & 52.8\\
+13--18 & Avoided medium gatherings & High & 60.8\\
+13--18 & Avoided large gatherings & High & 71.7\\
+\addlinespace
+13--18 & Avoided going out & High & 49.7\\
+13--18 & Avoided shops & High & 38.4\\
+13--18 & Avoided healthcare settings & High & 50.6\\
+19--24 & Avoided small gatherings & High & 44.0\\
+19--24 & Avoided medium gatherings & High & 51.4\\
+\addlinespace
+19--24 & Avoided large gatherings & High & 62.8\\
+19--24 & Avoided going out & High & 40.5\\
+19--24 & Avoided shops & High & 31.1\\
+19--24 & Avoided healthcare settings & High & 49.8\\
+25--30 & Avoided small gatherings & High & 38.9\\
+\addlinespace
+25--30 & Avoided medium gatherings & High & 44.6\\
+25--30 & Avoided large gatherings & High & 55.0\\
+25--30 & Avoided going out & High & 34.3\\
+25--30 & Avoided shops & High & 26.7\\
+25--30 & Avoided healthcare settings & High & 46.3\\
+\addlinespace
+31--36 & Avoided small gatherings & High & 49.5\\
+31--36 & Avoided medium gatherings & High & 55.3\\
+31--36 & Avoided large gatherings & High & 62.8\\
+31--36 & Avoided going out & High & 45.4\\
+31--36 & Avoided shops & High & 36.4\\
+\addlinespace
+31--36 & Avoided healthcare settings & High & 52.7\\
+37--42 & Avoided small gatherings & High & 66.7\\
+37--42 & Avoided medium gatherings & High & 71.4\\
+37--42 & Avoided large gatherings & High & 77.5\\
+37--42 & Avoided going out & High & 57.4\\
+\addlinespace
+37--42 & Avoided shops & High & 48.1\\
+37--42 & Avoided healthcare settings & High & 61.9\\
+43--48 & Avoided small gatherings & High & 45.7\\
+43--48 & Avoided medium gatherings & High & 51.4\\
+43--48 & Avoided large gatherings & High & 60.4\\
+\addlinespace
+43--48 & Avoided going out & High & 42.4\\
+43--48 & Avoided shops & High & 34.4\\
+43--48 & Avoided healthcare settings & High & 51.9\\
+49--54 & Avoided small gatherings & High & 46.7\\
+49--54 & Avoided medium gatherings & High & 52.4\\
+\addlinespace
+49--54 & Avoided large gatherings & High & 63.0\\
+49--54 & Avoided going out & High & 44.6\\
+49--54 & Avoided shops & High & 34.4\\
+49--54 & Avoided healthcare settings & High & 54.5\\
+\bottomrule
+\end{longtable}
+
+\clearpage
+
+\subsubsection{State-level estimates and sample sizes}\label{state-level-estimates-and-sample-sizes}
+
+\textbf{Code and saved outputs:} The state-level estimates and changes were
+generated in \texttt{EDA.ipynb}, under ``State-level changes between the
+selected periods''. The tables are generated from
+\texttt{graphs\ and\ tables/appendix\_A7a\_state\_period\_estimates.csv} and
+\texttt{graphs\ and\ tables/appendix\_A7b\_state\_changes.csv}.
+
+\begin{landscape}
+\scriptsize
+
+
+\begin{longtable}[t]{llrrrr}
+\caption{\label{tab:state-estimates}Unweighted sample sizes and weighted cost-group adherence estimates by jurisdiction and period.}\\
+\toprule
+State or territory & Period & Unweighted n & Low cost (\%) & Medium cost (\%) & High cost (\%)\\
+\midrule
+Australian Capital Territory & qweeks 31--36 & 87 & 83.1 & 54.6 & 39.0\\
+Australian Capital Territory & qweeks 37--42 & 99 & 86.3 & 84.5 & 71.4\\
+New South Wales & qweeks 31--36 & 1802 & 87.5 & 66.6 & 56.0\\
+New South Wales & qweeks 37--42 & 1864 & 89.5 & 89.3 & 79.3\\
+Northern Territory & qweeks 31--36 & 46 & 79.5 & 47.6 & 31.2\\
+\addlinespace
+Northern Territory & qweeks 37--42 & 41 & 83.6 & 54.7 & 44.7\\
+Queensland & qweeks 31--36 & 1197 & 83.2 & 53.9 & 43.9\\
+Queensland & qweeks 37--42 & 1187 & 85.4 & 66.9 & 49.5\\
+South Australia & qweeks 31--36 & 614 & 84.3 & 50.3 & 41.1\\
+South Australia & qweeks 37--42 & 596 & 85.9 & 71.5 & 48.6\\
+\addlinespace
+Tasmania & qweeks 31--36 & 121 & 81.1 & 37.3 & 27.9\\
+Tasmania & qweeks 37--42 & 123 & 81.8 & 42.1 & 31.9\\
+Victoria & qweeks 31--36 & 1535 & 87.0 & 70.6 & 55.6\\
+Victoria & qweeks 37--42 & 1555 & 88.9 & 86.8 & 75.1\\
+Western Australia & qweeks 31--36 & 593 & 85.1 & 57.6 & 46.8\\
+\addlinespace
+Western Australia & qweeks 37--42 & 565 & 80.0 & 41.4 & 32.4\\
+\bottomrule
+\end{longtable}
+
+
+\begin{longtable}[t]{lrrr}
+\caption{\label{tab:state-changes}Percentage-point change in weighted cost-group adherence between the two selected periods.}\\
+\toprule
+State or territory & Low cost change (pp) & Medium cost change (pp) & High cost change (pp)\\
+\midrule
+Australian Capital Territory & 3.2 & 29.9 & 32.4\\
+New South Wales & 2.0 & 22.7 & 23.3\\
+Northern Territory & 4.1 & 7.1 & 13.5\\
+Queensland & 2.2 & 13.0 & 5.6\\
+South Australia & 1.6 & 21.2 & 7.5\\
+\addlinespace
+Tasmania & 0.7 & 4.8 & 4.0\\
+Victoria & 1.9 & 16.2 & 19.5\\
+Western Australia & -5.1 & -16.2 & -14.4\\
+\bottomrule
+\end{longtable}
+
+\small
+\end{landscape}
+\clearpage
+
+\subsection{Complete Model 3 coefficient outputs}\label{complete-model-3-coefficient-outputs}
+
+\textbf{Code and saved outputs:} The five models were fitted in
+\texttt{Modelling.ipynb}, within the behaviour-specific Model 3 sections.
+Models were implemented in Python using \texttt{statsmodels.formula.api.glm()}
+with a binomial family and logit link. Respondent weights were passed
+through the \texttt{freq\_weights} argument, and HC1 robust covariance estimates
+were used when calculating standard errors, confidence intervals, and
+coefficient p-values. The tables below are generated from
+\texttt{graphs\ and\ tables/appendix\_A8\_model3\_mask\_wearing.csv} through
+\texttt{graphs\ and\ tables/appendix\_A12\_model3\_avoiding\_large\_gatherings.csv}.
+
+New South Wales and qweeks 31--36 were the reference categories. State
+main effects compare each jurisdiction with New South Wales during
+qweeks 31--36. Interaction terms show how each jurisdiction's period
+change differed from the New South Wales period change.
+
+\subsubsection{Wearing a face mask outside the home}\label{wearing-a-face-mask-outside-the-home}
+
+\begin{longtable}[t]{lrrll}
+\caption{\label{tab:model3-mask-appendix}Complete Model 3 coefficient output for mask wearing.}\\
+\toprule
+Term & Coefficient & Odds ratio & 95\% CI & P-value\\
+\midrule
+Intercept (NSW, qweeks 31--36) & 0.338 & 1.402 & 1.281--1.536 & <0.001\\
+ACT vs NSW (qweeks 31--36) & -0.592 & 0.553 & 0.370--0.828 & 0.004\\
+NT vs NSW (qweeks 31--36) & -1.672 & 0.188 & 0.098--0.358 & <0.001\\
+QLD vs NSW (qweeks 31--36) & -0.935 & 0.393 & 0.338--0.456 & <0.001\\
+SA vs NSW (qweeks 31--36) & -1.419 & 0.242 & 0.191--0.307 & <0.001\\
+\addlinespace
+TAS vs NSW (qweeks 31--36) & -2.850 & 0.058 & 0.030--0.112 & <0.001\\
+VIC vs NSW (qweeks 31--36) & 0.709 & 2.032 & 1.758--2.349 & <0.001\\
+WA vs NSW (qweeks 31--36) & -0.529 & 0.589 & 0.491--0.707 & <0.001\\
+Later period: qweeks 37--42 (NSW) & 2.245 & 9.439 & 7.754--11.491 & <0.001\\
+Later period x ACT & -0.703 & 0.495 & 0.260--0.944 & 0.033\\
+\addlinespace
+Later period x NT & -1.427 & 0.240 & 0.102--0.565 & 0.001\\
+Later period x QLD & -0.677 & 0.508 & 0.391--0.661 & <0.001\\
+Later period x SA & 0.927 & 2.526 & 1.655--3.856 & <0.001\\
+Later period x TAS & -2.202 & 0.111 & 0.043--0.283 & <0.001\\
+Later period x VIC & -0.741 & 0.477 & 0.354--0.641 & <0.001\\
+\addlinespace
+Later period x WA & -3.528 & 0.029 & 0.021--0.041 & <0.001\\
+\bottomrule
+\end{longtable}
+
+\clearpage
+
+\subsubsection{Avoiding guests at home}\label{avoiding-guests-at-home}
+
+\begin{longtable}[t]{lrrll}
+\caption{\label{tab:model3-guests-appendix}Complete Model 3 coefficient output for avoiding guests at home.}\\
+\toprule
+Term & Coefficient & Odds ratio & 95\% CI & P-value\\
+\midrule
+Intercept (NSW, qweeks 31--36) & 0.466 & 1.594 & 1.454--1.748 & <0.001\\
+ACT vs NSW (qweeks 31--36) & -0.511 & 0.600 & 0.402--0.896 & 0.012\\
+NT vs NSW (qweeks 31--36) & -0.393 & 0.675 & 0.398--1.145 & 0.145\\
+QLD vs NSW (qweeks 31--36) & -0.611 & 0.543 & 0.469--0.628 & <0.001\\
+SA vs NSW (qweeks 31--36) & -0.711 & 0.491 & 0.397--0.608 & <0.001\\
+\addlinespace
+TAS vs NSW (qweeks 31--36) & -1.340 & 0.262 & 0.177--0.387 & <0.001\\
+VIC vs NSW (qweeks 31--36) & 0.084 & 1.087 & 0.947--1.248 & 0.234\\
+WA vs NSW (qweeks 31--36) & -0.388 & 0.679 & 0.565--0.815 & <0.001\\
+Later period: qweeks 37--42 (NSW) & 1.546 & 4.693 & 3.975--5.541 & <0.001\\
+Later period x ACT & -0.298 & 0.742 & 0.397--1.389 & 0.351\\
+\addlinespace
+Later period x NT & -1.697 & 0.183 & 0.086--0.389 & <0.001\\
+Later period x QLD & -1.192 & 0.304 & 0.241--0.383 & <0.001\\
+Later period x SA & -1.135 & 0.322 & 0.234--0.442 & <0.001\\
+Later period x TAS & -1.198 & 0.302 & 0.175--0.521 & <0.001\\
+Later period x VIC & -0.132 & 0.877 & 0.685--1.122 & 0.295\\
+\addlinespace
+Later period x WA & -2.203 & 0.110 & 0.083--0.146 & <0.001\\
+\bottomrule
+\end{longtable}
+
+\clearpage
+
+\subsubsection{Avoiding small gatherings}\label{avoiding-small-gatherings}
+
+\begin{longtable}[t]{lrrll}
+\caption{\label{tab:model3-small-appendix}Complete Model 3 coefficient output for avoiding small gatherings.}\\
+\toprule
+Term & Coefficient & Odds ratio & 95\% CI & P-value\\
+\midrule
+Intercept (NSW, qweeks 31--36) & 0.260 & 1.296 & 1.185--1.419 & <0.001\\
+ACT vs NSW (qweeks 31--36) & -0.686 & 0.504 & 0.335--0.758 & 0.001\\
+NT vs NSW (qweeks 31--36) & -0.811 & 0.444 & 0.257--0.768 & 0.004\\
+QLD vs NSW (qweeks 31--36) & -0.622 & 0.537 & 0.463--0.621 & <0.001\\
+SA vs NSW (qweeks 31--36) & -0.756 & 0.470 & 0.378--0.583 & <0.001\\
+\addlinespace
+TAS vs NSW (qweeks 31--36) & -1.457 & 0.233 & 0.153--0.354 & <0.001\\
+VIC vs NSW (qweeks 31--36) & -0.007 & 0.993 & 0.867--1.136 & 0.913\\
+WA vs NSW (qweeks 31--36) & -0.509 & 0.601 & 0.501--0.722 & <0.001\\
+Later period: qweeks 37--42 (NSW) & 1.421 & 4.143 & 3.558--4.824 & <0.001\\
+Later period x ACT & -0.107 & 0.899 & 0.491--1.645 & 0.729\\
+\addlinespace
+Later period x NT & -1.090 & 0.336 & 0.156--0.723 & 0.005\\
+Later period x QLD & -1.091 & 0.336 & 0.269--0.420 & <0.001\\
+Later period x SA & -1.095 & 0.335 & 0.245--0.458 & <0.001\\
+Later period x TAS & -1.305 & 0.271 & 0.150--0.489 & <0.001\\
+Later period x VIC & -0.147 & 0.863 & 0.691--1.079 & 0.197\\
+\addlinespace
+Later period x WA & -1.981 & 0.138 & 0.104--0.182 & <0.001\\
+\bottomrule
+\end{longtable}
+
+\clearpage
+
+\subsubsection{Avoiding medium-sized gatherings}\label{avoiding-medium-sized-gatherings}
+
+\begin{longtable}[t]{lrrll}
+\caption{\label{tab:model3-medium-appendix}Complete Model 3 coefficient output for avoiding medium-sized gatherings.}\\
+\toprule
+Term & Coefficient & Odds ratio & 95\% CI & P-value\\
+\midrule
+Intercept (NSW, qweeks 31--36) & 0.500 & 1.649 & 1.504--1.808 & <0.001\\
+ACT vs NSW (qweeks 31--36) & -0.727 & 0.484 & 0.323--0.724 & <0.001\\
+NT vs NSW (qweeks 31--36) & -1.052 & 0.349 & 0.202--0.604 & <0.001\\
+QLD vs NSW (qweeks 31--36) & -0.576 & 0.562 & 0.486--0.651 & <0.001\\
+SA vs NSW (qweeks 31--36) & -0.702 & 0.495 & 0.401--0.613 & <0.001\\
+\addlinespace
+TAS vs NSW (qweeks 31--36) & -1.226 & 0.294 & 0.201--0.429 & <0.001\\
+VIC vs NSW (qweeks 31--36) & -0.076 & 0.927 & 0.808--1.063 & 0.279\\
+WA vs NSW (qweeks 31--36) & -0.529 & 0.589 & 0.491--0.707 & <0.001\\
+Later period: qweeks 37--42 (NSW) & 1.486 & 4.419 & 3.747--5.213 & <0.001\\
+Later period x ACT & 0.235 & 1.265 & 0.655--2.445 & 0.484\\
+\addlinespace
+Later period x NT & -1.078 & 0.340 & 0.158--0.732 & 0.006\\
+Later period x QLD & -1.234 & 0.291 & 0.231--0.367 & <0.001\\
+Later period x SA & -1.202 & 0.301 & 0.219--0.412 & <0.001\\
+Later period x TAS & -1.194 & 0.303 & 0.177--0.518 & <0.001\\
+Later period x VIC & -0.053 & 0.948 & 0.745--1.208 & 0.667\\
+\addlinespace
+Later period x WA & -2.075 & 0.126 & 0.095--0.166 & <0.001\\
+\bottomrule
+\end{longtable}
+
+\clearpage
+
+\subsubsection{Avoiding large gatherings}\label{avoiding-large-gatherings}
+
+\begin{longtable}[t]{lrrll}
+\caption{\label{tab:model3-large-appendix}Complete Model 3 coefficient output for avoiding large gatherings.}\\
+\toprule
+Term & Coefficient & Odds ratio & 95\% CI & P-value\\
+\midrule
+Intercept (NSW, qweeks 31--36) & 0.721 & 2.057 & 1.870--2.263 & <0.001\\
+ACT vs NSW (qweeks 31--36) & -0.613 & 0.542 & 0.362--0.810 & 0.003\\
+NT vs NSW (qweeks 31--36) & -0.978 & 0.376 & 0.221--0.640 & <0.001\\
+QLD vs NSW (qweeks 31--36) & -0.431 & 0.650 & 0.560--0.755 & <0.001\\
+SA vs NSW (qweeks 31--36) & -0.549 & 0.577 & 0.466--0.715 & <0.001\\
+\addlinespace
+TAS vs NSW (qweeks 31--36) & -0.923 & 0.397 & 0.277--0.570 & <0.001\\
+VIC vs NSW (qweeks 31--36) & 0.049 & 1.050 & 0.910--1.212 & 0.501\\
+WA vs NSW (qweeks 31--36) & -0.363 & 0.696 & 0.577--0.838 & <0.001\\
+Later period: qweeks 37--42 (NSW) & 1.657 & 5.242 & 4.351--6.315 & <0.001\\
+Later period x ACT & 0.478 & 1.613 & 0.732--3.551 & 0.235\\
+\addlinespace
+Later period x NT & -1.178 & 0.308 & 0.144--0.660 & 0.002\\
+Later period x QLD & -1.352 & 0.259 & 0.202--0.332 & <0.001\\
+Later period x SA & -1.245 & 0.288 & 0.207--0.402 & <0.001\\
+Later period x TAS & -1.532 & 0.216 & 0.128--0.365 & <0.001\\
+Later period x VIC & -0.267 & 0.766 & 0.585--1.002 & 0.052\\
+\addlinespace
+Later period x WA & -2.276 & 0.103 & 0.077--0.138 & <0.001\\
+\bottomrule
+\end{longtable}
+
+\clearpage
+
+\subsection{Likelihood-ratio test output}\label{likelihood-ratio-test-output}
+
+Table \ref{tab:lr-tests-appendix} reports the likelihood-ratio tests
+comparing Model 2 with Model 3 for the five modelled behaviours.
+
+\textbf{Code and saved output:} The model comparisons were performed in
+\texttt{Modelling.ipynb}, under ``Final model-comparison section''.
+Likelihood-ratio p-values were calculated using \texttt{scipy.stats.chi2.sf()}.
+The table is generated from
+\texttt{graphs\ and\ tables/appendix\_A13\_likelihood\_ratio\_tests.csv}.
+
+\begin{longtable}[t]{lrrl}
+\caption{\label{tab:lr-tests-appendix}Likelihood-ratio tests comparing Model 2 with Model 3.}\\
+\toprule
+Behaviour & LR statistic & Degrees of freedom & P-value\\
+\midrule
+Mask wearing & 662.42 & 7 & <0.001\\
+Avoiding guests & 338.32 & 7 & <0.001\\
+Avoiding small gatherings & 286.52 & 7 & <0.001\\
+Avoiding medium gatherings & 338.39 & 7 & <0.001\\
+Avoiding large gatherings & 345.28 & 7 & <0.001\\
+\bottomrule
+\end{longtable}
+
+\clearpage
+
+The analysis code, report source file, cleaned dataset, figures, tables,
+and saved numerical outputs are available in the public GitHub
+repository provided in the Acknowledgements section.
+
+\normalsize
+
+\end{document}
